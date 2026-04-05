@@ -1,0 +1,29 @@
+const getScheme = document.getElementById('get-scheme');
+const colorPicker = document.getElementById('colorPicker');
+const schemeMode = document.getElementById('schemeMode');
+
+getScheme.addEventListener('click', () => {    
+    const color = colorPicker.value.slice(1);
+    const mode = document.getElementById('schemeMode').value;
+    // const count = document.getElementById('count').value;
+    const count = 5;
+    fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}&count=${count}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            let colors = data.colors;
+            let schemeHTML = '';
+            colors.forEach(color => {
+                schemeHTML += 
+                `<div class="color-scheme-item" style="background-color: ${color.hex.value};">
+                   <p class="color-value">${color.hex.value}</p>
+                </div>
+                `;
+            });
+            document.getElementById('color-scheme-container').innerHTML = schemeHTML;
+            // schemeContainer.innerHTML = schemeHTML;
+        })
+        .catch(error => {
+            console.error('Error fetching color scheme:', error);
+        });
+});

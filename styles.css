@@ -1,0 +1,35 @@
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+main, header {
+    width: 500px;
+    margin: 0 auto;
+}
+.navbar {
+    /* border: 2px solid red; */
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.color-scheme-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+.color-value {
+    border-radius: 50%;
+    margin-top: 5px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    padding: 20px 0;
+}
