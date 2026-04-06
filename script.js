@@ -15,8 +15,8 @@ getScheme.addEventListener('click', () => {
             let schemeHTML = '';
             colors.forEach(color => {
                 schemeHTML += 
-                `<div class="color-scheme-item" style="background-color: ${color.hex.value};">
-                   <p class="color-value">${color.hex.value}</p>
+                `<div (click)="getVal(${color.hex.value})" class="color-scheme-item"  style="background-color: ${color.hex.value};">
+                   <p class="color-value" style="color: ${color.contrast.value}">${color.hex.value}</p>
                 </div>
                 `;
             });
@@ -27,3 +27,10 @@ getScheme.addEventListener('click', () => {
             console.error('Error fetching color scheme:', error);
         });
 });
+
+
+function getVal(color) {
+    console.log(color);
+
+}
+    
