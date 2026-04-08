@@ -6,6 +6,7 @@ html,body {
 main, header {
     width: 500px;
     margin: 0 auto;
+    position: relative;
 }
 .navbar {
     /* border: 2px solid red; */
@@ -54,4 +55,34 @@ input[type="color"] {
     height: 40px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.spinner {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    margin: 0 auto;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@media (max-width: 600px) {
+    main, header {
+        width: 100%;
+        margin: 0 auto;
+      position: relative;
+    }
+
+    .navbar {
+    /* border: 2px solid red; */
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 }
