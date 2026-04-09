@@ -3,6 +3,7 @@ const colorPicker = document.getElementById('colorPicker');
 const schemeMode = document.getElementById('schemeMode');
 
 getScheme.addEventListener('click', () => {    
+    document.getElementById('get-scheme').disabled = true;
     document.getElementById('spinner').style.display = 'flex';
     const color = colorPicker.value.slice(1);
     const mode = document.getElementById('schemeMode').value;
@@ -25,13 +26,14 @@ getScheme.addEventListener('click', () => {
             });
             document.getElementById('color-scheme-container').innerHTML = schemeHTML;
             }
-            
+            document.getElementById('get-scheme').disabled = false;
             // schemeContainer.innerHTML = schemeHTML;
         })
         .catch(error => {
             console.error('Error fetching color scheme:', error);
             alert('Failed to fetch color scheme. Please try again later.');
             document.getElementById('spinner').style.display = 'none';
+            document.getElementById('get-scheme').disabled = false;
         });
 });
 
